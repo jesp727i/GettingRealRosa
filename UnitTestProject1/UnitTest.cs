@@ -62,6 +62,14 @@ namespace GettingRealRosa
             Assert.AreEqual(1, result);
         }
         [TestMethod]
+        public void EAndreNavnPaaGarn()
+        {
+
+            garn.ChangeName("Alpakke");
+            Assert.AreEqual("Alpakke", garn.Name);
+        }
+
+        [TestMethod]
         public void a()
         {
             Assert.AreEqual(1,1);

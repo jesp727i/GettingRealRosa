@@ -19,6 +19,11 @@ namespace GettingRealRosa
         {
             Amount -= amount;
         }
+
+        internal void ChangeName(string newName)
+        {
+            Name = newName;
+        }
     }
 
 }
