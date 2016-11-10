@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace GettingRealRosa
+namespace ClassLibraryRosa
 {
-    internal class Garn
+    public class Garn
     {
         public string Name;
         public string Farve;
@@ -10,17 +10,17 @@ namespace GettingRealRosa
         public int Amount;
         public float Price;
 
-        internal void AddAmount(int amount)
+        public void AddAmount(int amount)
         {
             Amount += amount;
         }
 
-        internal void SubAmount(int amount)
+        public void SubAmount(int amount)
         {
             Amount -= amount;
         }
 
-        internal void ChangeName(string newName)
+        public void ChangeName(string newName)
         {
             Name = newName;
         }
