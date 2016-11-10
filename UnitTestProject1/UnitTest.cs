@@ -20,8 +20,8 @@ namespace GettingRealRosa
         [TestMethod]
         public void OpretGarnFarve()
         {
-            garn.Farve = "Rød";
-            Assert.AreEqual("Rød", garn.Farve);
+            garn.Color = "Rød";
+            Assert.AreEqual("Rød", garn.Color);
         }
         [TestMethod]
         public void OpretGarnType()

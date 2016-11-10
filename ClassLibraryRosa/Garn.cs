@@ -5,7 +5,7 @@ namespace ClassLibraryRosa
     public class Garn
     {
         public string Name;
-        public string Farve;
+        public string Color;
         public string Type;
         public int Amount;
         public float Price;
