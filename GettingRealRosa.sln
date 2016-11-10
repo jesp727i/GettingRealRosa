@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingRealRosa", "GettingR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingRealRosa.UnitTests", "UnitTestProject1\GettingRealRosa.UnitTests.csproj", "{C7234DCD-ED95-4881-9C5C-895782E8F40D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryRosa", "ClassLibraryRosa\ClassLibraryRosa.csproj", "{598D6A04-6791-4F17-9DD6-3BB10A740475}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C7234DCD-ED95-4881-9C5C-895782E8F40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7234DCD-ED95-4881-9C5C-895782E8F40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7234DCD-ED95-4881-9C5C-895782E8F40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

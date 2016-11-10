@@ -14,37 +14,39 @@ namespace GettingRealRosa
         {
             
             garn.Name = "Alpaka";
-            string result = garn.Name;
-            Assert.AreEqual("Alpaka", result);
+            Assert.AreEqual("Alpaka", garn.Name);
         }
         [TestMethod]
         public void OpretGarnFarve()
         {
             garn.Farve = "Rød";
-            string result = garn.Farve;
-            Assert.AreEqual("Rød", result);
+            Assert.AreEqual("Rød", garn.Farve);
         }
         [TestMethod]
         public void OpretGarnType()
         {
             garn.Type = "Alpaka";
-            string result = garn.Type;
-            Assert.AreEqual("Alpaka", result);
+            Assert.AreEqual("Alpaka", garn.Type);
         }
         [TestMethod]
         public void OpretGarnMaengde()
         {
             garn.Amount = 1;
-            int result = garn.Amount;
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(1, garn.Amount);
         }
         [TestMethod]
         public void OpretGarnPris()
         {
             garn.Price = 192.10f;
-            float result = garn.Price;
-            Assert.AreEqual(192.10f, result);
+            Assert.AreEqual(192.10f, garn.Price);
         }
+        /*[TestMethod]
+        public void OpretGarnId()
+        {
+            garn.Id = 1;
+            Assert.AreEqual(192.10f, garn.Id);
+        }*/
+
         [TestMethod]
         public void laegTilMaengde()
         {
@@ -74,6 +76,7 @@ namespace GettingRealRosa
         {
             Assert.AreEqual(1,1);
         }
+
 
     }
 }
