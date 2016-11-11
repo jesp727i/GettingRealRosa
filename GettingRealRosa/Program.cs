@@ -33,13 +33,13 @@ namespace GettingRealRosa
 
                     Garn OpretGarn = new Garn();
                     Console.WriteLine("Opret Garn");
-                    Console.WriteLine("Indtast navnet på garnet");
-                    OpretGarn.Name = Console.ReadLine();
+                    Console.WriteLine("Indtast typen på garnet");
+                    OpretGarn.Type = Console.ReadLine();
                     Console.Clear();
 
                     Console.WriteLine("Opret Garn");
-                    Console.WriteLine("Indtast typen på garnet");
-                    OpretGarn.Type = Console.ReadLine();
+                    Console.WriteLine("Indtast navnet på garnet");
+                    OpretGarn.Name = Console.ReadLine();
                     Console.Clear();
 
                     Console.WriteLine("Opret Garn");
@@ -48,7 +48,8 @@ namespace GettingRealRosa
                     Console.Clear();
 
                     Console.WriteLine("Opret Garn");
-                    Console.WriteLine("Indtast prisen på garnet (komma tal, husk og bruge . til ved øre)");
+                    Console.WriteLine("Indtast prisen på garnet");
+                    Console.WriteLine("(KOMMA TAL, HUSK AT BRUGE . OG IKKE ,)");
                     OpretGarn.Price = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
                     Console.Clear();
 
@@ -68,7 +69,7 @@ namespace GettingRealRosa
                     break;
                 case "L":
                     Console.Clear();
-                    Console.WriteLine("Garn liste");
+                    Console.WriteLine("Her er din garn liste");
                     if (GarnListe != null)
                     {
                         foreach (Garn garn in GarnListe)
