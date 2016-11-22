@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryRosa
 {
-    public class Class1
+    public interface IProducts
     {
     }
 }
