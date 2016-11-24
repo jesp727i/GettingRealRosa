@@ -19,9 +19,13 @@ namespace ClassLibraryRosa
             ProductList.Add(product);
         }
 
-        public void DeleteProduct(IProducts product)
+        public void DeleteProduct(int Id)
         {
+            IProducts product = ProductList[Id];
             ProductList.Remove(product);
         }
+
+        
+        
     }
 }

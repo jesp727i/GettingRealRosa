@@ -106,7 +106,7 @@ namespace GettingRealRosa
             Garn garn = new Garn(3, "Alpaka", "himmelgarn", 5, 10.50, "Blue");
             productList.AddProduct(garn);
             Assert.AreEqual(garn, productList.ProductList[2]);
-            productList.DeleteProduct(garn);
+            productList.DeleteProduct(2);
             Assert.AreEqual(false, productList.ProductList.Contains(garn));
 
         }
