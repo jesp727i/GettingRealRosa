@@ -38,8 +38,7 @@ namespace GettingRealRosa
                     ShowList();
                     break;
                 case "E":
-                    
-                        
+                    Exit();
                     break;
                 default:
                     Console.Clear();
@@ -94,7 +93,6 @@ namespace GettingRealRosa
         public void ShowList()
         {
             Console.Clear();
-            Console.WriteLine("Her er din garn liste");
             if (GarnListe.ProductList.Count != 0)
             {
                 Console.WriteLine("Her er din garn liste");
@@ -284,16 +282,18 @@ namespace GettingRealRosa
         }
         public void Exit()
         {
-            Console.Clear();
+            Console.WriteLine("Vil du Afslutte programmet?");
+            Console.Write("J:Ja / N:Nej   :");
             switch (Console.ReadLine().ToUpper())
             {
-                case "Y":
+                case "J":
                     Environment.Exit(1);
                     break;
                 case "N":
                     break;
                 default:
-
+                    Console.WriteLine("Ugyldigt Input prøv igen");
+                    Exit();
                     break;
             }
         }
