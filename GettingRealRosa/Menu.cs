@@ -38,8 +38,8 @@ namespace GettingRealRosa
                     ShowList();
                     break;
                 case "E":
-                    Console.Clear();
-                    Environment.Exit(1);
+                    
+                        
                     break;
                 default:
                     Console.Clear();
@@ -222,30 +222,30 @@ namespace GettingRealRosa
                                 Console.Write("Type:" + garn[0] + ". Angiv ny type: ");
                                 string type = Console.ReadLine();
                                 if (type == "")  type = "" + garn[0];
-                                Console.Write("Navn:" + garn[0] + ". Angiv nyt navn: ");
+                                Console.Write("Navn:" + garn[1] + ". Angiv nyt navn: ");
                                 string Name = Console.ReadLine();
-                                if (Name == "") Name = "" + garn[0];
-                                Console.Write("Farve:" + garn[0] + ". Angiv ny farve: ");
+                                if (Name == "") Name = "" + garn[1];
+                                Console.Write("Farve:" + garn[2] + ". Angiv ny farve: ");
                                 string Color = Console.ReadLine();
-                                if (Color == "") Color = "" + garn[0];
-                                Console.Write("Antal:" + garn[0] + ". Angiv nyt Antal: ");
+                                if (Color == "") Color = "" + garn[2];
+                                Console.Write("Antal:" + garn[3] + ". Angiv nyt Antal: ");
                                 string antal = Console.ReadLine();
                                 int NyAntal;
                                 if (antal == "")
                                 {
-                                    antal = "" + garn[0];
+                                    antal = "" + garn[3];
                                     NyAntal = int.Parse(antal);
                                 }
                                 else
                                 {
                                     NyAntal = int.Parse(antal);
                                 }
-                                Console.Write("Pris:" + garn[0] + ". Angiv ny pris(husk . ikke ,): ");
+                                Console.Write("Pris:" + garn[4] + ". Angiv ny pris(husk . ikke ,): ");
                                 string pris = Console.ReadLine();
                                 double NyPris;
                                 if (pris == "")
                                 {
-                                    pris = "" + garn[0];
+                                    pris = "" + garn[4];
                                     NyPris = Double.Parse(pris);
                                 }
                                 else
@@ -279,6 +279,22 @@ namespace GettingRealRosa
                 Console.WriteLine("tryk på en knap for at gå til hovede menuen igen");
                 Console.ReadKey();
                 Console.Clear();
+            }
+            
+        }
+        public void Exit()
+        {
+            Console.Clear();
+            switch (Console.ReadLine().ToUpper())
+            {
+                case "Y":
+                    Environment.Exit(1);
+                    break;
+                case "N":
+                    break;
+                default:
+
+                    break;
             }
         }
     }
