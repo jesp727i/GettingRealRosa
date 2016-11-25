@@ -37,17 +37,12 @@ namespace ClassLibraryRosa
             Amount -= amount;
         }
 
-        public void ChangeName(string newName)
-        {
-            Name = newName;
-        }
         public List<object> GetProductInfo()
         {
             List<object> l = new List<object>();
             l.Add(Type);
             l.Add(Name);
             l.Add(Color);
-            
             l.Add(Amount);
             l.Add(Price);
             return l;

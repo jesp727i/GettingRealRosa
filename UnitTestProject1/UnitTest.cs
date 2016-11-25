@@ -86,10 +86,10 @@ namespace GettingRealRosa
         }
 
         [TestMethod]
-        public void EAndreNavnPaaGarn()
+        public void EAndreInfoIGarn()
         {
-            garn.ChangeName("Alpakke");
-            Assert.AreEqual("Alpakke", garn.Name);
+            garn.UpdateProduct("Alpakke","Lars", "Blue",5,2.12);
+            Assert.AreEqual("Lars", garn.Name);
         }
 
         [TestMethod]
