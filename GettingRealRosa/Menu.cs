@@ -53,6 +53,7 @@ namespace GettingRealRosa
         public void CreateProduct()
         {
             Console.Clear();
+
             Garn OpretGarn = new Garn();
             Console.WriteLine("Opret Garn");
             Console.WriteLine("Indtast typen på garnet");
@@ -72,7 +73,7 @@ namespace GettingRealRosa
             Console.WriteLine("Opret Garn");
             Console.WriteLine("Indtast prisen på garnet");
             Console.WriteLine("(KOMMA TAL, HUSK AT BRUGE . OG IKKE ,)");
-            OpretGarn.Price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+            OpretGarn.Price = double.Parse(Console.ReadLine());
             Console.Clear();
 
             Console.WriteLine("Opret Garn");
@@ -217,12 +218,12 @@ namespace GettingRealRosa
                                 t -= 1;
                                 List<object> garn = GarnListe.ProductList[t].GetProductInfo();
                                 Console.WriteLine("hvis du ikke vil redigere den propoty tryk enter \n");
-                                Console.Write("Type:" + garn[0] + ". Angiv ny type: ");
-                                string type = Console.ReadLine();
-                                if (type == "")  type = "" + garn[0];
                                 Console.Write("Navn:" + garn[1] + ". Angiv nyt navn: ");
                                 string Name = Console.ReadLine();
                                 if (Name == "") Name = "" + garn[1];
+                                Console.Write("Type:" + garn[0] + ". Angiv ny type: ");
+                                string type = Console.ReadLine();
+                                if (type == "") type = "" + garn[0];
                                 Console.Write("Farve:" + garn[2] + ". Angiv ny farve: ");
                                 string Color = Console.ReadLine();
                                 if (Color == "") Color = "" + garn[2];
@@ -244,11 +245,11 @@ namespace GettingRealRosa
                                 if (pris == "")
                                 {
                                     pris = "" + garn[4];
-                                    NyPris = Double.Parse(pris);
+                                    NyPris = double.Parse(pris);
                                 }
                                 else
                                 {
-                                    NyPris = Double.Parse(pris);
+                                    NyPris = double.Parse(pris);
                                 }
                                 GarnListe.ProductList[t].UpdateProduct(type,Name,Color,NyAntal,NyPris);
                             }
