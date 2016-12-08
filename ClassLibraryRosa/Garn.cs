@@ -10,7 +10,7 @@ namespace ClassLibraryRosa
         public string Type;
         public int Amount;
         public double Price;
-        public int Id;
+        public int Varenr;
 
         public Garn()
         {
@@ -24,7 +24,7 @@ namespace ClassLibraryRosa
             Type = type;
             Amount = amount;
             Price = price;
-            Id = id;
+            Varenr = id;
         }
 
         public void AddAmount(int amount)

@@ -17,10 +17,8 @@ namespace GettingRealRosa
         }
         public void Run()
         {
-            
             Menu menu = new Menu();
             menu.MainMenu();
-            
         }
     }
 }

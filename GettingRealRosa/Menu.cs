@@ -18,8 +18,8 @@ namespace GettingRealRosa
                 GarnListe = new ProductReposetory();
             }
             Console.WriteLine("Menu");
-            Console.WriteLine("O: Opret garn ");
-            Console.WriteLine("U: Updater garn");
+            Console.WriteLine("O: Opret vare");
+            Console.WriteLine("R: Rediger vare");
             Console.WriteLine("S: Slet garn");
             Console.WriteLine("L: Se Liste af garn");
             Console.WriteLine("E: Luk programmet");
@@ -55,36 +55,57 @@ namespace GettingRealRosa
             Console.Clear();
 
             Garn OpretGarn = new Garn();
-            Console.WriteLine("Opret Garn");
+            Console.WriteLine("Opret vare");
             Console.WriteLine("Indtast typen på garnet");
             OpretGarn.Type = Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("Opret Garn");
+            Console.WriteLine("Opret vare");
             Console.WriteLine("Indtast navnet på garnet");
             OpretGarn.Name = Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("Opret Garn");
+            Console.WriteLine("Opret vare");
             Console.WriteLine("Indtast farven på garnet");
             OpretGarn.Color = Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("Opret Garn");
+            Console.WriteLine("Opret vare");
             Console.WriteLine("Indtast prisen på garnet");
             Console.WriteLine("(KOMMA TAL, HUSK AT BRUGE . OG IKKE ,)");
             OpretGarn.Price = double.Parse(Console.ReadLine());
             Console.Clear();
 
-            Console.WriteLine("Opret Garn");
+            Console.WriteLine("Opret vare");
             Console.WriteLine("Indtast mængden af garnet (Tal)");
             OpretGarn.Amount = Int32.Parse(Console.ReadLine());
             Console.Clear();
 
-            Console.WriteLine("Opret Garn");
+            Console.WriteLine("Opret vare");
             Console.WriteLine("Du har indtastet");
-            Console.WriteLine("Navn: " + OpretGarn.Name + " | Type: " + OpretGarn.Type + " | Farve: " + OpretGarn.Color + " | Pris: " + OpretGarn.Price + " | Mængde: " + OpretGarn.Amount);
-            Console.WriteLine("Tryk for at gå vidre");
+            Console.WriteLine("Type: " + OpretGarn.Type + " | Navn: " + OpretGarn.Name + " | Farve: " + OpretGarn.Color + " | Mængde: " + OpretGarn.Amount + " | Pris: " + OpretGarn.Price);
+            Console.WriteLine("Vil du oprette mere garn? Y/N");
+            bool e = true;
+            while (e == true)
+            {
+                switch (Console.ReadLine().ToUpper())
+                {
+                    case "Y":
+                        e = false;
+                        Console.Clear();
+                        CreateProduct();
+                        break;
+                    case "N":
+                        e = false;
+                        Console.Clear();
+                        MainMenu();
+                        break;
+                    default:
+                        Console.WriteLine("ikke gyldigt indput");
+                        break;
+
+                }
+            }
             Console.ReadKey();
 
             GarnListe.AddProduct(OpretGarn);
@@ -96,7 +117,7 @@ namespace GettingRealRosa
             Console.Clear();
             if (GarnListe.ProductList.Count != 0)
             {
-                Console.WriteLine("Her er din garn liste");
+                Console.WriteLine("Her er din vare liste");
                 foreach (Garn garn in GarnListe.ProductList)
                 {
                     Console.WriteLine("Navn: " + garn.Name + " | Type: " + garn.Type + " | Farve: " + garn.Color + " | Pris: " + garn.Price + " | Mængde: " + garn.Amount);
@@ -104,7 +125,7 @@ namespace GettingRealRosa
             }
             else
             {
-                Console.WriteLine("Der er ikke oprettet noget garn.");
+                Console.WriteLine("Der er ikke oprettet nogen vare.");
             }
 
             Console.WriteLine("Tryk for at gå vidre");
@@ -119,14 +140,14 @@ namespace GettingRealRosa
             
             if (GarnListe.ProductList.Count != 0)
             {
-                Console.WriteLine("Her er din garn liste");
+                Console.WriteLine("Her er din vare liste");
                 foreach (Garn garn in GarnListe.ProductList)
                 {
-                    Console.WriteLine(i + ": Navn: " + garn.Name + " | Type: " + garn.Type + " | Farve: " + garn.Color + " | Pris: " + garn.Price + " | Mængde: " + garn.Amount);
+                    Console.WriteLine(i + ": Type: " + garn.Type + " | Navn: " + garn.Name + " | Farve: " + garn.Color + " | Mængde: " + garn.Amount + " | Pris: " + garn.Price);
                     i++;
                 }
                 Console.WriteLine();
-                Console.WriteLine("Indtast nummer på produkt du gerne vil slette");
+                Console.WriteLine("Indtast nummer på vare du gerne vil slette");
                 Console.WriteLine("eller indtast T for 'tilbage' og kom tilbage til hovede menuen.");
                 switch (e = Console.ReadLine().ToUpper())
                 {
@@ -143,16 +164,16 @@ namespace GettingRealRosa
                             {
                                 t -= 1;
                                 List<object> garn = GarnListe.ProductList[t].GetProductInfo();
-                                Console.WriteLine("Vil du slette Type:" + garn[0] + " Navn:" + garn[1] + " Farve:" + garn[2] + " Antal" + garn[3] + " Pris:" + garn[4]);
+                                Console.WriteLine("Vil du slette Type:" + garn[0] + " Navn:" + garn[1] + " Farve:" + garn[2] + " Mængde:" + garn[3] + " Pris:" + garn[4]);
                                 Console.WriteLine("Tryk J for Ja ellers tryk på en anden knap for at gå tilbage.");
                                 if (Console.ReadLine().ToUpper() == "J")
                                 {
                                     GarnListe.DeleteProduct(t);
-                                    Console.WriteLine("Produktet er blev slettet");
+                                    Console.WriteLine("varen er blev slettet");
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Produktet er blev ikke slettet");
+                                    Console.WriteLine("varen er blev ikke slettet");
                                 }
                             }
                             else
@@ -193,14 +214,14 @@ namespace GettingRealRosa
 
             if (GarnListe.ProductList.Count != 0)
             {
-                Console.WriteLine("Her er din garn liste");
+                Console.WriteLine("Her er din vare liste");
                 foreach (Garn garn in GarnListe.ProductList)
                 {
                     Console.WriteLine(i + ": Navn: " + garn.Name + " | Type: " + garn.Type + " | Farve: " + garn.Color + " | Pris: " + garn.Price + " | Mængde: " + garn.Amount);
                     i++;
                 }
                 Console.WriteLine();
-                Console.WriteLine("Indtast nummer på produkt du gerne vil Redigere");
+                Console.WriteLine("Indtast nummer på vare du gerne vil Redigere");
                 Console.WriteLine("eller indtast T for 'tilbage' og kom tilbage til hovede menuen.");
                 switch (e = Console.ReadLine().ToUpper())
                 {
@@ -218,16 +239,16 @@ namespace GettingRealRosa
                                 t -= 1;
                                 List<object> garn = GarnListe.ProductList[t].GetProductInfo();
                                 Console.WriteLine("hvis du ikke vil redigere den propoty tryk enter \n");
-                                Console.Write("Navn:" + garn[1] + ". Angiv nyt navn: ");
+                                Console.Write("Type:" + garn[0] + ". Angiv nyt type: ");
                                 string Name = Console.ReadLine();
                                 if (Name == "") Name = "" + garn[1];
-                                Console.Write("Type:" + garn[0] + ". Angiv ny type: ");
+                                Console.Write("Navn:" + garn[1] + ". Angiv ny navn: ");
                                 string type = Console.ReadLine();
                                 if (type == "") type = "" + garn[0];
                                 Console.Write("Farve:" + garn[2] + ". Angiv ny farve: ");
                                 string Color = Console.ReadLine();
                                 if (Color == "") Color = "" + garn[2];
-                                Console.Write("Antal:" + garn[3] + ". Angiv nyt Antal: ");
+                                Console.Write("Mængde:" + garn[3] + ". Angiv nyt Antal: ");
                                 string antal = Console.ReadLine();
                                 int NyAntal;
                                 if (antal == "")
@@ -274,7 +295,7 @@ namespace GettingRealRosa
             }
             else
             {
-                Console.WriteLine("Der er ikke oprettet noget garn.");
+                Console.WriteLine("Der er ikke oprettet nogen vare.");
                 Console.WriteLine("tryk på en knap for at gå til hovede menuen igen");
                 Console.ReadKey();
                 Console.Clear();
