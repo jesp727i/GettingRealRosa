@@ -20,8 +20,8 @@ namespace GettingRealRosa
             Console.WriteLine("Menu");
             Console.WriteLine("O: Opret vare");
             Console.WriteLine("R: Rediger vare");
-            Console.WriteLine("S: Slet garn");
-            Console.WriteLine("L: Se Liste af garn");
+            Console.WriteLine("S: Slet vare");
+            Console.WriteLine("L: Se Liste af vare");
             Console.WriteLine("E: Luk programmet");
             switch (Console.ReadLine().ToUpper())
             {
@@ -56,35 +56,35 @@ namespace GettingRealRosa
 
             Garn OpretGarn = new Garn();
             Console.WriteLine("Opret vare");
-            Console.WriteLine("Indtast typen på garnet");
+            Console.WriteLine("Indtast typen på varen");
             OpretGarn.Type = Console.ReadLine();
             Console.Clear();
 
             Console.WriteLine("Opret vare");
-            Console.WriteLine("Indtast navnet på garnet");
+            Console.WriteLine("Indtast navnet på varen");
             OpretGarn.Name = Console.ReadLine();
             Console.Clear();
 
             Console.WriteLine("Opret vare");
-            Console.WriteLine("Indtast farven på garnet");
+            Console.WriteLine("Indtast farven på varen");
             OpretGarn.Color = Console.ReadLine();
             Console.Clear();
 
             Console.WriteLine("Opret vare");
-            Console.WriteLine("Indtast prisen på garnet");
+            Console.WriteLine("Indtast prisen på varen");
             Console.WriteLine("(KOMMA TAL, HUSK AT BRUGE . OG IKKE ,)");
             OpretGarn.Price = double.Parse(Console.ReadLine());
             Console.Clear();
 
             Console.WriteLine("Opret vare");
-            Console.WriteLine("Indtast mængden af garnet (Tal)");
+            Console.WriteLine("Indtast mængden af varen (Tal)");
             OpretGarn.Amount = Int32.Parse(Console.ReadLine());
             Console.Clear();
 
             Console.WriteLine("Opret vare");
             Console.WriteLine("Du har indtastet");
             Console.WriteLine("Type: " + OpretGarn.Type + " | Navn: " + OpretGarn.Name + " | Farve: " + OpretGarn.Color + " | Mængde: " + OpretGarn.Amount + " | Pris: " + OpretGarn.Price);
-            Console.WriteLine("Vil du oprette mere garn? Y/N");
+            Console.WriteLine("Vil du oprette flere varer? Y/N");
             bool e = true;
             while (e == true)
             {
