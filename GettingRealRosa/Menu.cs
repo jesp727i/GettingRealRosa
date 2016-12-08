@@ -84,7 +84,10 @@ namespace GettingRealRosa
             Console.WriteLine("Opret vare");
             Console.WriteLine("Du har indtastet");
             Console.WriteLine("Type: " + OpretGarn.Type + " | Navn: " + OpretGarn.Name + " | Farve: " + OpretGarn.Color + " | Mængde: " + OpretGarn.Amount + " | Pris: " + OpretGarn.Price);
+            GarnListe.AddProduct(OpretGarn);
             Console.WriteLine("Vil du oprette flere varer? Y/N");
+            Console.ReadKey();
+
             bool e = true;
             while (e == true)
             {
@@ -106,9 +109,7 @@ namespace GettingRealRosa
 
                 }
             }
-            Console.ReadKey();
-
-            GarnListe.AddProduct(OpretGarn);
+            
             Console.Clear();
         }
 

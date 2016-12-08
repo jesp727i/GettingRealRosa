@@ -8,20 +8,20 @@ namespace ClassLibraryRosa
 {
     public class ProductReposetory
     {
-        public List<IProducts> ProductList;
+        public List<Garn> ProductList;
         public ProductReposetory()
         {
-            ProductList = new List<IProducts>();
+            ProductList = new List<Garn>();
         }
 
-        public void AddProduct(IProducts product)
+        public void AddProduct(Garn product)
         {
             ProductList.Add(product);
         }
 
         public void DeleteProduct(int Id)
         {
-            IProducts product = ProductList[Id];
+            Garn product = ProductList[Id];
             ProductList.Remove(product);
         }
 
