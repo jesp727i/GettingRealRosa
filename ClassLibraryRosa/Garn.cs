@@ -3,27 +3,28 @@ using System.Collections.Generic;
 
 namespace ClassLibraryRosa
 {
-    public class Garn : IProducts
+    public class Garn
     {
         public string Name;
         public string Color;
         public string Type;
         public int Amount;
         public double Price;
-        public int Varenr;
+        public int VareNr;
 
         public Garn()
         {
 
         }
 
-        public Garn(string type, string name, int amount, double price, string color)
+        public Garn(int vareNr, string type, string name, int amount, double price, string color)
         {
             Name = name;
             Color = color;
             Type = type;
             Amount = amount;
             Price = price;
+            VareNr = vareNr;
         }
 
         public void AddAmount(int amount)
