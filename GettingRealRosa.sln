@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingRealRosa.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryRosa", "ClassLibraryRosa\ClassLibraryRosa.csproj", "{598D6A04-6791-4F17-9DD6-3BB10A740475}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{66C65D59-4C94-4EC1-8478-8541C4BE323F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{598D6A04-6791-4F17-9DD6-3BB10A740475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C65D59-4C94-4EC1-8478-8541C4BE323F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C65D59-4C94-4EC1-8478-8541C4BE323F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C65D59-4C94-4EC1-8478-8541C4BE323F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C65D59-4C94-4EC1-8478-8541C4BE323F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

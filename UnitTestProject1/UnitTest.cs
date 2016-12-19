@@ -95,7 +95,7 @@ namespace GettingRealRosa
         [TestMethod]
         public void CanSaveGarnToList()
         {
-            Garn garn = new Garn(3, "Alpaka", "himmelgarn", 5, 10.50, "Blue");
+            Garn garn = new Garn( "Alpaka", "himmelgarn", 5, 10.50, "Blue");
             productList.ProductList.Add(garn);
             Assert.AreEqual(garn, productList.ProductList[2]);
         }
@@ -103,7 +103,7 @@ namespace GettingRealRosa
         [TestMethod]
         public void CanDeleteFromList()
         {
-            Garn garn = new Garn(3, "Alpaka", "himmelgarn", 5, 10.50, "Blue");
+            Garn garn = new Garn( "Alpaka", "himmelgarn", 5, 10.50, "Blue");
             productList.AddProduct(garn);
             Assert.AreEqual(garn, productList.ProductList[2]);
             productList.DeleteProduct(2);

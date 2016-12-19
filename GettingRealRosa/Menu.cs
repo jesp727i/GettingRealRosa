@@ -17,6 +17,8 @@ namespace GettingRealRosa
             {
                 GarnListe = new ProductReposetory();
             }
+            DataSetHandler h = new DataSetHandler();
+            h.SaveToXmlFile(GarnListe.ProductList);
             Console.WriteLine("Menu");
             Console.WriteLine("O: Opret vare");
             Console.WriteLine("R: Rediger vare");

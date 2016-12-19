@@ -17,14 +17,13 @@ namespace ClassLibraryRosa
 
         }
 
-        public Garn(int id, string type, string name, int amount, double price, string color)
+        public Garn(string type, string name, int amount, double price, string color)
         {
             Name = name;
             Color = color;
             Type = type;
             Amount = amount;
             Price = price;
-            Varenr = id;
         }
 
         public void AddAmount(int amount)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLibraryRosa;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace GettingRealRosa
 {
@@ -14,11 +15,23 @@ namespace GettingRealRosa
         {
             Program myProgram = new Program();
             myProgram.Run();
+            /*DataSetHandler handler = new DataSetHandler();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new GUI(handler));*/
+
         }
-        public void Run()
+        
+       public void Run()
         {
+
+            DataSetHandler handler = new DataSetHandler();
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new GUI(handler));
             Menu menu = new Menu();
             menu.MainMenu();
+            
         }
     }
 }
