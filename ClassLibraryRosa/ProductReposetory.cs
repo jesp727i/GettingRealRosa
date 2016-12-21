@@ -25,6 +25,14 @@ namespace ClassLibraryRosa
             ProductList.Remove(product);
         }
 
+        public void UpdateProduct(int vareNr, string type, string name, int amount, double price, string color)
+        {
+            ProductList[vareNr].Type = type;
+            ProductList[vareNr].Name = name;
+            ProductList[vareNr].Amount = amount;
+            ProductList[vareNr].Price = price;
+            ProductList[vareNr].Color = color;
+        }
         
         
     }

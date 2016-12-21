@@ -25,28 +25,28 @@ namespace ClassLibraryRosa
             GarnTable.Columns.Add("Amount", typeof(Int64));
             GarnTable.Columns.Add("Price", typeof(Double));
             GarnTable.PrimaryKey = new DataColumn[] { pkVareNr };
-            for (int i = 1; i <= 5; i++)
-            {
-                DataRow datarow = Data.Tables["garn"].NewRow();
-                datarow["VareNr"] = i;
-                datarow["Name"] = "kage";
-                datarow["Color"] = "blå";
-                datarow["Type"] = "garn";
-                datarow["Amount"] = 2;
-                datarow["Price"] = 1.20;
-                Data.Tables["garn"].Rows.Add(datarow);
-            }
-            ItemCount = 5;
 
 
 
         }
         public void SaveToXmlFile(List<Garn> garnlist)
         {
+            foreach (Garn Item in garnlist)
+            {
+                DataRow datarow = Data.Tables["garn"].NewRow();
+                datarow["VareNr"] = Item.VareNr;
+                datarow["Name"] = Item.Name;
+                datarow["Color"] = Item.Color;
+                datarow["Type"] = Item.Type;
+                datarow["Amount"] = Item.Amount;
+                datarow["Price"] = Item.Price;
+                Data.Tables["garn"].Rows.Add(datarow);
+            }
             DateTime date = DateTime.Today;
             string filePath = "../database/" + date.ToString("yyyyMMdd") + "data.xml";
             Data.WriteXml(filePath);
         }
+
         public DataTable read()
         {
             DataSet ds = Data;
