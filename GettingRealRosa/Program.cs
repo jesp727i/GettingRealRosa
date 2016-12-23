@@ -7,6 +7,7 @@ using ClassLibraryRosa;
 using System.Globalization;
 using System.Windows.Forms;
 
+
 namespace GettingRealRosa
 {
     class Program
@@ -25,10 +26,11 @@ namespace GettingRealRosa
        public void Run()
         {
 
-            DataSetHandler handler = new DataSetHandler();
+
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new GUI(handler));
+
             Menu menu = new Menu();
             menu.MainMenu();
             

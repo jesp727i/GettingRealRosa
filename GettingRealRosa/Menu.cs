@@ -5,20 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLibraryRosa;
 using System.Globalization;
+using System.Dynamic;
+using System.IO;
 
 namespace GettingRealRosa
 {
     class Menu
     {
         ProductReposetory GarnListe;
+        DataSetHandler handler;
         public void MainMenu()
         {
+            
+
+
             if (GarnListe == null)
             {
                 GarnListe = new ProductReposetory();
+                handler = new DataSetHandler(GarnListe);
             }
-            DataSetHandler h = new DataSetHandler();
-            h.SaveToXmlFile(GarnListe.ProductList);
+            
+            
             Console.WriteLine("Menu");
             Console.WriteLine("O: Opret vare");
             Console.WriteLine("R: Rediger vare");
@@ -30,7 +37,7 @@ namespace GettingRealRosa
                 case "O":
                     CreateProduct();
                     break;
-                case "U":
+                case "R":
                     UpdateProduct();
                     break;
                 case "S":
@@ -123,7 +130,7 @@ namespace GettingRealRosa
                 Console.WriteLine("Her er din vare liste");
                 foreach (Garn garn in GarnListe.ProductList)
                 {
-                    Console.WriteLine("Navn: " + garn.Name + " | Type: " + garn.Type + " | Farve: " + garn.Color + " | Pris: " + garn.Price + " | Mængde: " + garn.Amount);
+                    Console.WriteLine("Type: " + garn.Type + " | Name: " + garn.Name + " | Farve: " + garn.Color + " | Mængde: " + garn.Amount + " | Pris: " + garn.Price);
                 }
             }
             else
@@ -220,7 +227,7 @@ namespace GettingRealRosa
                 Console.WriteLine("Her er din vare liste");
                 foreach (Garn garn in GarnListe.ProductList)
                 {
-                    Console.WriteLine(i + ": Navn: " + garn.Name + " | Type: " + garn.Type + " | Farve: " + garn.Color + " | Pris: " + garn.Price + " | Mængde: " + garn.Amount);
+                    Console.WriteLine(i + ": Type: " + garn.Type + " | Name: " + garn.Name + " | Farve: " + garn.Color + " | Mængde: " + garn.Amount + " | Pris: " + garn.Price);
                     i++;
                 }
                 Console.WriteLine();
@@ -312,7 +319,23 @@ namespace GettingRealRosa
             switch (Console.ReadLine().ToUpper())
             {
                 case "J":
-                    Environment.Exit(1);
+                    Console.WriteLine("Vil du gemme?");
+                    Console.Write("J:Ja / N:Nej   :");
+                    switch (Console.ReadLine().ToUpper())
+                    {
+                        case "J":
+                            
+                            handler.SaveToXmlFile(GarnListe.ProductList);
+
+                            break;
+                        case "N":
+                            break;
+                        default:
+                            Console.WriteLine("Ugyldigt Input prøv igen");
+                            Exit();
+                            break;
+                    }
+                    Environment.Exit(0);
                     break;
                 case "N":
                     break;
